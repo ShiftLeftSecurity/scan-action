@@ -4,18 +4,19 @@ inputs:
   src:
     description: "Source directory to scan. Defaults to workspace"
     required: false
-    default: $GITHUB_WORKSPACE
+    default: "/github/workspace"
   output:
     description: "Output directory for the generated reports. Defaults to reports"
     required: false
-    default: reports
+    default: "/github/workspace/reports"
   type:
     description: "Project type. Eg: java, python, nodejs"
     required: true
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "docker://appthreat:sast-scan"
   args:
+    - "scan"
     - "--src"
     - ${{ inputs.src }}
     - "--out_dir"
