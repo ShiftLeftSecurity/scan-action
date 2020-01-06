@@ -1,23 +1,24 @@
-# Hello world docker action
+# Introduction
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+This action wraps the [oss sast](https://github.com/AppThreat/sast-scan/) scanning tool called `sast-scan`. sast-scan supports a range of free and open source SAST scanners and comes with optimal configurations for various languages and frameworks.
 
-## Inputs
+## Usage
 
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-### `time`
-
-The time we greeted you.
-
-## Example usage
+With minimal configuration
 
 ```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+- uses: AppThreat/sast-scan-action@master
+  with:
+    type: "python"
+```
+
+```yaml
+- uses: AppThreat/sast-scan-action@master
+  with:
+    type: "python"
+
+- uses: actions/upload-artifact@v1
+  with:
+    name: reports
+    path: reports
 ```

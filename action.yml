@@ -1,15 +1,27 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "sast-scan"
+description: "This action wraps the [oss sast](https://github.com/AppThreat/sast-scan/) scanning tool called `sast-scan`. sast-scan supports a range of free and open source SAST scanners and comes with optimal configurations for various languages and frameworks."
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  src:
+    description: "Source directory to scan. Defaults to workspace"
+    required: false
+    default: $GITHUB_WORKSPACE
+  output:
+    description: "Output directory for the generated reports. Defaults to reports"
+    required: false
+    default: reports
+  type:
+    description: "Project type. Eg: java, python, nodejs"
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
-    - ${{ inputs.who-to-greet }}
+    - "--src"
+    - ${{ inputs.src }}
+    - "--out_dir"
+    - ${{ inputs.output }}
+    - "--type"
+    - ${{ inputs.type }}
+branding:
+  icon: "check"
+  color: "blue"
