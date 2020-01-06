@@ -14,7 +14,7 @@ inputs:
     required: true
 runs:
   using: "docker"
-  image: "docker://appthreat:sast-scan"
+  image: "docker://quay.io/appthreat/sast-scan:latest"
   args:
     - "scan"
     - "--src"

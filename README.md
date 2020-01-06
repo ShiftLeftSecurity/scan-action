@@ -12,6 +12,8 @@ With minimal configuration
     type: "python"
 ```
 
+Upload reports to build artifacts
+
 ```yaml
 - uses: AppThreat/sast-scan-action@master
   with:
