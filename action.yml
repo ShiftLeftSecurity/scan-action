@@ -1,5 +1,5 @@
 name: "sast-scan"
-description: "This action wraps the [oss sast](https://github.com/AppThreat/sast-scan/) scanning tool called `sast-scan`. sast-scan supports a range of free and open source SAST scanners and comes with optimal configurations for various languages and frameworks."
+description: "This action wraps the [oss sast](https://github.com/AppThreat/sast-scan/) scanning tool called `sast-scan`."
 inputs:
   src:
     description: "Source directory to scan. Defaults to workspace"
