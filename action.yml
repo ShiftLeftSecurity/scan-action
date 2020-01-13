@@ -10,8 +10,8 @@ inputs:
     required: false
     default: "/github/workspace/reports"
   type:
-    description: "Project type. Eg: java, python, nodejs"
-    required: true
+    description: "Project type. Eg: java, python, nodejs. Comma separated values allowed."
+    required: false
 runs:
   using: "docker"
   image: "docker://quay.io/appthreat/sast-scan:latest"
@@ -23,6 +23,8 @@ runs:
     - ${{ inputs.output }}
     - "--type"
     - ${{ inputs.type }}
+  env:
+    WORKSPACE: https://github.com/${{ env.GITHUB_REPOSITORY }}/blob/${{ env.GITHUB_SHA }}
 branding:
   icon: "check"
   color: "blue"
