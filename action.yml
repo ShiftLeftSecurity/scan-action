@@ -1,20 +1,20 @@
-name: "sast-scan"
-description: "sast-scan is a free and open-source Static Analysis Security Testing (SAST) tool for a range of languages."
+name: "shiftleft-scan"
+description: "ShiftLeft Scan is a free commercial grade security tool for modern DevOps teams. With an integrated multi-scanner based design, ShiftLeft Scan can detect various security issues in a single scan"
 inputs:
   src:
-    description: "Source directory to scan. Defaults to workspace"
+    description: "Source directory to scan. Defaults to /github/workspace"
     required: false
     default: "/github/workspace"
   output:
-    description: "Output directory for the generated reports. Defaults to reports"
+    description: "Output directory for the generated reports. Defaults to /github/workspace/reports"
     required: false
     default: "/github/workspace/reports"
   type:
-    description: "Project type. Eg: java, python, nodejs. Comma separated values allowed."
+    description: "Project type. Eg: credscan, java, python, nodejs, depscan etc. Comma separated values allowed."
     required: false
 runs:
   using: "docker"
-  image: "docker://quay.io/appthreat/sast-scan:latest"
+  image: "docker://shiftleft/sast-scan:latest"
   args:
     - "scan"
     - "--src"
