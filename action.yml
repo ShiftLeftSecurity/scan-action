@@ -1,5 +1,5 @@
 name: "shiftleft-scan"
-description: "ShiftLeft Scan is a free commercial grade security tool for modern DevOps teams. With an integrated multi-scanner based design, ShiftLeft Scan can detect various security issues in a single scan"
+description: "ShiftLeft Scan is a free commercial grade security tool for modern DevOps teams"
 inputs:
   src:
     description: "Source directory to scan. Defaults to /github/workspace"
