@@ -1,6 +1,6 @@
 # Overview
 
-ShiftLeft Inspect Pro is a free commercial-grade security tool for modern DevOps teams. With an integrated multi-scanner based design, Inspect Pro can detect various kinds of security flaws in your application and infrastructure code in a single fast scan. The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
+ShiftLeft Scan is a free commercial-grade security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan. The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
 
 ## Highlighted Features
 
@@ -67,4 +67,4 @@ In the above configuration, two environment variables are used to customise the 
 
 ## Documentation
 
-Please refer to <LINK HERE> for the documentation on using ShiftLeft Inspect Pro in your pipelines.
+Please refer to <LINK HERE> for the documentation on using ShiftLeft Scan in your pipelines.
