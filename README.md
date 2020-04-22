@@ -1,6 +1,8 @@
 # Overview
 
-ShiftLeft Scan is a free commercial-grade security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan. The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
+![Scan logo](docs/icon.png)
+
+ShiftLeft [Scan](https://www.shiftleft.io/scan) is a free commercial-grade security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan. The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
 
 ## Highlighted Features
 
@@ -28,7 +30,14 @@ ShiftLeft Scan is a free commercial-grade security tool for modern DevOps teams.
 
 ## Getting Started
 
-Simply add the following snippet to your GitHub action configuration.
+Simply add the following snippet to your GitHub actions workflow.
+
+```yaml
+- name: Perform ShiftLeft Scan
+  uses: ShiftLeftSecurity/scan-action@master
+```
+
+To override the built-in language detection, use the `type` parameter.
 
 ```yaml
 - name: Perform ShiftLeft Scan
@@ -37,7 +46,11 @@ Simply add the following snippet to your GitHub action configuration.
     type: "credscan,java,depscan"
 ```
 
-Pass the various language types using the `type` parameter. Ignoring this parameter would enable automatic project type detection. You can find the scan summary printed directly on the console log.
+For a full example, refer to the [workflow](https://github.com/ShiftLeftSecurity/sast-scan/blob/master/.github/workflows/pythonapp.yml) file used by Scan to scan itself.
+
+### Viewing Reports
+
+Scan summary would get printed directly on the action build log as shown.
 
 ![Scan Invocation](docs/scan-invocation.png)
 
@@ -62,9 +75,13 @@ The action also produces HTML reports for the various scans. To upload the repor
 
 In the above configuration, two environment variables are used to customise the behaviour:
 
-- WORKSPACE: Specifying the URL to your repository would transform the filenames in the reports to hyperlinks
+- WORKSPACE: Specifying the URL to your repository would transform the filenames in the reports to hyperlinks. Specify empty string `""` when using the `Code Scanning` feature on GitHub
 - GITHUB_TOKEN: Passing the GitHub token would improve the scan results by increasing the allowance for package names lookup during dependency scanning
 
 ## Documentation
 
-Please refer to <LINK HERE> for the documentation on using ShiftLeft Scan in your pipelines.
+Please refer to the [documentation](https://docs.shiftleft.io/shiftleft/scan/scan) on using ShiftLeft Scan in your pipelines.
+
+## Already a Scan user?
+
+Please let us [know](https://github.com/ShiftLeftSecurity/sast-scan/issues) so that we can add your logo or link here.
