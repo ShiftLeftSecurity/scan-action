@@ -1,8 +1,15 @@
 # Overview
 
-![Scan logo](docs/icon.png)
+```bash
+███████╗██╗  ██╗██╗███████╗████████╗██╗     ███████╗███████╗████████╗    ███████╗ ██████╗ █████╗ ███╗   ██╗
+██╔════╝██║  ██║██║██╔════╝╚══██╔══╝██║     ██╔════╝██╔════╝╚══██╔══╝    ██╔════╝██╔════╝██╔══██╗████╗  ██║
+███████╗███████║██║█████╗     ██║   ██║     █████╗  █████╗     ██║       ███████╗██║     ███████║██╔██╗ ██║
+╚════██║██╔══██║██║██╔══╝     ██║   ██║     ██╔══╝  ██╔══╝     ██║       ╚════██║██║     ██╔══██║██║╚██╗██║
+███████║██║  ██║██║██║        ██║   ███████╗███████╗██║        ██║       ███████║╚██████╗██║  ██║██║ ╚████║
+╚══════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚══════╝╚══════╝╚═╝        ╚═╝       ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+```
 
-ShiftLeft [Scan](https://www.shiftleft.io/scan) is a free commercial-grade security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan. The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
+ShiftLeft [Scan](https://www.shiftleft.io/scan) is a free open-source security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan without the need for any _remote server_! The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
 
 ## Highlighted Features
 
@@ -77,6 +84,23 @@ In the above configuration, two environment variables are used to customise the 
 
 - WORKSPACE: Specifying the URL to your repository would transform the filenames in the reports to hyperlinks. Specify empty string `""` when using the `Code Scanning` feature on GitHub
 - GITHUB_TOKEN: Passing the GitHub token would improve the scan results by increasing the allowance for package names lookup during dependency scanning
+
+## Tips & Tricks
+
+### Automatic build
+
+Scan can attempt to build certain project types automatically. Java, node.js, rust, go and csharp are currently supported. To enable auto-build, set the environment variable `SCAN_AUTO_BUILD` as shown:
+
+```yaml
+- name: Perform ShiftLeft Scan
+  uses: ShiftLeftSecurity/scan-action@master
+  with:
+    type: "credscan,python"
+  env:
+    WORKSPACE: https://github.com/${{ github.repository }}/blob/${{ github.sha }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    SCAN_AUTO_BUILD: true
+```
 
 ## Documentation
 
