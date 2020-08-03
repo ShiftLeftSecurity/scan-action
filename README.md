@@ -17,8 +17,8 @@ ShiftLeft [Scan](https://slscan.io) is a free open-source security tool for mode
 
 - Credentials Scanning to detect accidental secret leaks
 - Static Analysis Security Testing (SAST) for a range of languages and frameworks
-- Open-source dependencies audit
-- License violation checks
+- Open-source dependencies and License audit
+- Pull Request status checks and Scan summary as comments
 
 ### Languages supported
 
