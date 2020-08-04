@@ -14,9 +14,10 @@ inputs:
     required: false
 runs:
   using: "docker"
-  image: "docker://shiftleft/sast-scan:latest"
+  image: "docker://shiftleft/scan:latest"
   env:
     WORKSPACE: ""
+    SCAN_ANNOTATE_PR: true
   args:
     - "scan"
     - "--src"
