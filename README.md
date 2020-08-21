@@ -1,12 +1,12 @@
 # Overview
 
 ```bash
-███████╗██╗  ██╗██╗███████╗████████╗██╗     ███████╗███████╗████████╗    ███████╗ ██████╗ █████╗ ███╗   ██╗
-██╔════╝██║  ██║██║██╔════╝╚══██╔══╝██║     ██╔════╝██╔════╝╚══██╔══╝    ██╔════╝██╔════╝██╔══██╗████╗  ██║
-███████╗███████║██║█████╗     ██║   ██║     █████╗  █████╗     ██║       ███████╗██║     ███████║██╔██╗ ██║
-╚════██║██╔══██║██║██╔══╝     ██║   ██║     ██╔══╝  ██╔══╝     ██║       ╚════██║██║     ██╔══██║██║╚██╗██║
-███████║██║  ██║██║██║        ██║   ███████╗███████╗██║        ██║       ███████║╚██████╗██║  ██║██║ ╚████║
-╚══════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   ╚══════╝╚══════╝╚═╝        ╚═╝       ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
+████████╗ ██████╗ █████╗ ███╗   ██╗
+███╔════╝██╔════╝██╔══██╗████╗  ██║
+████████╗██║     ███████║██╔██╗ ██║
+╚╚════██║██║     ██╔══██║██║╚██╗██║
+████████║╚██████╗██║  ██║██║ ╚████║
+╚╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
 ```
 
 [Scan](https://slscan.io) is a free and open-source security tool for modern DevOps teams. With an integrated multi-scanner based design, Scan can detect various kinds of security flaws in your application and infrastructure code in a single fast scan without the need for any _remote server_! The product supports a range of integration options: from scanning every push via a git hook to scanning every build and pull-request in the CI/CD pipelines.
@@ -40,14 +40,14 @@
 Simply add the following snippet to your GitHub actions workflow.
 
 ```yaml
-- name: Perform ShiftLeft Scan
+- name: Perform Scan
   uses: ShiftLeftSecurity/scan-action@master
 ```
 
 To override the built-in language detection, use the `type` parameter.
 
 ```yaml
-- name: Perform ShiftLeft Scan
+- name: Perform Scan
   uses: ShiftLeftSecurity/scan-action@master
   with:
     type: "credscan,java,depscan"
@@ -66,7 +66,7 @@ Scan summary would get printed directly on the action build log as shown.
 The action also produces HTML reports for the various scans. To upload the reports as build artifacts to your pipeline use the `upload-artifact` step as shown:
 
 ```yaml
-- name: Perform ShiftLeft Scan
+- name: Perform Scan
   uses: ShiftLeftSecurity/scan-action@master
   with:
     type: "credscan,python"
@@ -92,7 +92,7 @@ In the above configuration, two environment variables are used to customise the 
 Scan can attempt to build certain project types automatically. Java, node.js, rust, go and csharp are currently supported. To enable auto-build, set the environment variable `SCAN_AUTO_BUILD` as shown:
 
 ```yaml
-- name: Perform ShiftLeft Scan
+- name: Perform Scan
   uses: ShiftLeftSecurity/scan-action@master
   with:
     type: "credscan,python"
@@ -106,6 +106,6 @@ Scan can attempt to build certain project types automatically. Java, node.js, ru
 
 Please refer to the [documentation](https://slscan.io) on using ShiftLeft Scan in your pipelines.
 
-## Already a Scan user?
+## Support
 
-Please let us [know](https://github.com/ShiftLeftSecurity/sast-scan/issues) so that we can add your logo or link here.
+Developers behind scan are available on a dedicated [discord channel](https://discord.gg/gC62PzS) for questions and support. For defects, raising an issue on [GitHub](https://github.com/ShiftLeftSecurity/sast-scan/issues) is best.
