@@ -1,5 +1,5 @@
-name: "security-scan"
-description: "Scan is a free and open-source security audit tool for your DevOps team"
+name: "Security Scan"
+description: "Security Scan is a free and open-source security audit tool for your DevOps team"
 inputs:
   src:
     description: "Source directory to scan. Defaults to /github/workspace"
