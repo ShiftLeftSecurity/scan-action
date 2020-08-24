@@ -1,4 +1,4 @@
-name: "slscan"
+name: "security-scan"
 description: "Scan is a free and open-source security audit tool for your DevOps team"
 inputs:
   src:
