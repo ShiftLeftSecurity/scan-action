@@ -1,4 +1,4 @@
-name: "Security Scan"
+name: "Security and Licence Scan"
 description: "Security Scan is a free and open-source security audit tool for your DevOps team"
 inputs:
   src:
