@@ -19,6 +19,7 @@ runs:
     WORKSPACE: ""
     SCAN_ANNOTATE_PR: true
     SKIP_BOT_TRIGGERS: true
+    ENABLE_OSS_RISK: true
   args:
     - "scan"
     - "--src"
