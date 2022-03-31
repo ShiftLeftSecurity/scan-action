@@ -1,3 +1,7 @@
+# Warning
+
+Scan is now in maintenance mode. If you've just come across this project, then probably best to look at any alternatives. Read more [here](https://github.com/ShiftLeftSecurity/sast-scan/issues/352).
+
 # Overview
 
 ```bash
